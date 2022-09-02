@@ -29,37 +29,40 @@
     <div class="weather-app">
       <div class="container">
         <div>
-          <h1 class="temp">&#176;</h1>
+          <h1 id="temp">&#176;</h1>
           <div class="city-time">
-            <h1 class="cityName"></h1>
+            <h1 id="cityName"></h1>
             <h4>
-              <span class="time"></span>
+              <span id="time"></span>
               -
-              <span class="day"></span>
+              <span id="day"></span>
             </h4>
           </div>
           <div class="weather">
-            <span class="condition"></span>
+            <span id="condition"></span>
+          </div>
+          <div class="currentDetails">
+            <ul class="weatherDetails">
+              <h4>Weather Details</h4>
+              <li>
+                <span>Cloudy: </span>
+
+                <span id="cloud"></span>
+              </li>
+              <li>
+                <span>Humidity: </span>
+                <span id="humidity"></span>
+              </li>
+              <li>
+                <span>Wind: </span>
+
+                <span id="wind"></span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="currentDetails">
-        <ul class="weatherDetails">
-          <h4>Weather Details</h4>
-          <li>
-            <span>Cloudy</span>
-            <span class="cloud"></span>
-          </li>
-          <li>
-            <span>Humidity</span>
-            <span class="humidity"></span>
-          </li>
-          <li>
-            <span>Wind</span>
-            <span class="wind"></span>
-          </li>
-        </ul>
-      </div>
+
       <div class="panel">
         <form id="locationInput">
           <input type="text" class="search" placeholder="Search Location" />
@@ -67,7 +70,7 @@
             <i class="fa fa-search" aria-hidden="true"></i>
           </button>
         </form>
-        <form class="currentButton">
+        <form id="currentButton">
           <button type="submit" class="currentPosition">Current</button>
         </form>
 
@@ -76,13 +79,13 @@
           <ul class="weatherAfter">
             <li>
               <span>Tomorrow</span>
-              <span class="tomorrow">17&#176;</span>
+              <span id="tomorrow">17&#176;</span>
             </li>
             <li>
               <span>19.08</span>
-              <span class="dayAfterTomorrow">16&#176;</span>
+              <span id="dayAfterTomorrow">16&#176;</span>
             </li>
-            <li><span>20.08</span> <span class="twoDays">23&#176;</span></li>
+            <li><span>20.08</span> <span id="twoDays">23&#176;</span></li>
           </ul>
         </div>
         <br />
@@ -91,20 +94,20 @@
           <ul class="cities">
             <li>
               <span>Roma</span>
-              <span class="maxInRoma">27&#176;</span>
+              <span id="maxInRoma">27&#176;</span>
             </li>
             <li>
               <span>Oslo</span>
-              <span class="maxInOslo">16&#176;</span>
+              <span id="maxInOslo">16&#176;</span>
             </li>
             <li>
               <span>Lisbon</span>
-              <span class="maxInLisbon">24&#176;</span>
+              <span id="maxInLisbon">24&#176;</span>
             </li>
           </ul>
         </div>
         <div class="gitLink">
-          <h5 class="name">
+          <h5 id="name">
             <a href="https://github.com/Marbowle/weather-app" target="_blank"
               >Open-source code
             </a>

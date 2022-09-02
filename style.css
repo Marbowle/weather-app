@@ -12,7 +12,6 @@ h3 {
 }
 .weather-app {
   min-height: 100vh;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,7 +48,7 @@ h3 {
   align-items: center;
 }
 .city-time,
-.temp,
+#temp,
 .weather {
   margin: 0 1em;
 }
@@ -59,7 +58,7 @@ h3 {
   font-size: 3em;
 }
 
-.temp {
+#temp {
   font-size: 7em;
   margin: 0;
 }
@@ -67,20 +66,8 @@ h3 {
   display: block;
   margin: 0.5em 0;
 }
-.currentDetails {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 34em 4em 1em 2em;
-}
-.currentDetails li {
-  display: flex;
-  justify-content: space-between;
+.weatherDetails {
+  list-style: none;
 }
 .panel {
   position: absolute;

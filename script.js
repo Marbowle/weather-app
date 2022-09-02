@@ -1,4 +1,4 @@
-let time = document.querySelector(".time");
+let time = document.querySelector("#time");
 let date = new Date();
 let hour = date.getHours();
 if (hour < 10) {
@@ -9,7 +9,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 time.innerHTML = `${hour}:${minutes}`;
-let day = document.querySelector(".day");
+let day = document.querySelector("#day");
 let dayName = [
   "Sunday",
   "Monday",
@@ -62,25 +62,25 @@ let locationInput = document.querySelector("#locationInput");
 locationInput.addEventListener("submit", currentTemperature);
 function showTemperature(response) {
   let findName = response.data.name;
-  let cityName = document.querySelector(".cityName");
+  let cityName = document.querySelector("#cityName");
   cityName.innerHTML = `${findName}`;
   let anotherDays = document.querySelector("#changeCity");
   anotherDays.innerHTML = `Another days in ${findName}`;
   let temperatureCity = Math.round(response.data.main.temp);
-  let temp = document.querySelector(".temp");
+  let temp = document.querySelector("#temp");
   temp.innerHTML = `${temperatureCity}&#176;`;
   let cloudy = response.data.clouds.all;
-  let cloud = document.querySelector(".cloud");
+  let cloud = document.querySelector("#cloud");
   cloud.innerHTML = `${cloudy} %`;
   let humidityCurrent = response.data.main.humidity;
-  let humidity = document.querySelector(".humidity");
+  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${humidityCurrent} %`;
   let windSpeed = response.data.wind.speed;
   let windChange = Math.round(3.6 * windSpeed);
-  let wind = document.querySelector(".wind");
+  let wind = document.querySelector("#wind");
   wind.innerHTML = `${windChange} km/h`;
   let weatherDescription = response.data.weather[0].description;
-  let codnition = document.querySelector(".condition");
+  let codnition = document.querySelector("#condition");
   codnition.innerHTML = `${weatherDescription}`;
 }
 search("Stockholm");
