@@ -39,7 +39,11 @@
             </h4>
           </div>
           <div class="weather">
-            <canvas class="icon" width="128" height="128"></canvas>
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt=""
+              id="icon"
+            />
             <span id="condition"></span>
           </div>
         </div>
@@ -65,12 +69,12 @@
             <span id="pressure"></span>
           </li>
           <li>
-            <span>Sunrise</span>
-            <span id="sunrise"></span>
+            <span>Max Temp</span>
+            <span id="maxTemp"></span>
           </li>
           <li>
-            <span>Sunset</span>
-            <span id="sunset"></span>
+            <span>Min Temp</span>
+            <span id="minTemp"></span>
           </li>
         </ul>
       </div>
@@ -128,7 +132,6 @@
         </div>
       </div>
     </div>
-    <script src="skycons.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

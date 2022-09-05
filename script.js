@@ -80,21 +80,21 @@ function showTemperature(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `${windChange} km/h`;
   let weatherDescription = response.data.weather[0].description;
+  let pressureCurrent = document.querySelector("#pressure");
+  pressureCurrent.innerHTML = `${response.data.main.pressure} hPa`;
+  let currentTempMax = document.querySelector("#maxTemp");
+  let maxTemp = Math.round(response.data.main.temp_max);
+  currentTempMax.innerHTML = `${maxTemp} &#176;C`;
+  let currentTempMin = document.querySelector("#minTemp");
+  let minTemp = Math.round(response.data.main.temp_min);
+  currentTempMin.innerHTML = `${minTemp} &#176;C`;
   let codnition = document.querySelector("#condition");
   codnition.innerHTML = `${weatherDescription}`;
-  let icon = weatherDescription;
-  setIcons(icon, document.querySelector(".icon"));
-  /* let iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);*/
-}
-function setIcons(icon, iconID) {
-  let skycons = new Skycons({ color: "white" });
-  let currentIcon = icon.replaceAll(/" "/g, "_").toUpperCase();
-  skycons.play();
-  return skycons.set(iconID, Skycons[currentIcon]);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 search("Stockholm");
