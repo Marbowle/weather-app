@@ -82,11 +82,19 @@ function showTemperature(response) {
   let weatherDescription = response.data.weather[0].description;
   let codnition = document.querySelector("#condition");
   codnition.innerHTML = `${weatherDescription}`;
-  let iconElement = document.querySelector("#icon");
+  let icon = response.data.weather[0].description;
+  setIcons(icon, document.querySelector("#icon"));
+  /* let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.weather[0].description);*/
+}
+function setIcons(icon, iconsID) {
+  const skycons = new Skycons({ color: "white" });
+  const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+  skycons.play();
+  return skycons.set(iconsID, Skycons[currentIcon]);
 }
 search("Stockholm");
