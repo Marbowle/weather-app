@@ -68,7 +68,7 @@ function showTemperature(response) {
   anotherDays.innerHTML = `Another days in ${findName}`;
   let temperatureCity = Math.round(response.data.main.temp);
   let temp = document.querySelector("#temp");
-  temp.innerHTML = `${temperatureCity}&#176;`;
+  temp.innerHTML = `${temperatureCity}&#176;C`;
   let cloudy = response.data.clouds.all;
   let cloud = document.querySelector("#cloud");
   cloud.innerHTML = `${cloudy} %`;
@@ -82,8 +82,8 @@ function showTemperature(response) {
   let weatherDescription = response.data.weather[0].description;
   let codnition = document.querySelector("#condition");
   codnition.innerHTML = `${weatherDescription}`;
-  let icon = response.data.weather[0].description;
-  setIcons(icon, document.querySelector("#icon"));
+  let icon = weatherDescription;
+  setIcons(icon, document.querySelector(".icon"));
   /* let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -91,10 +91,10 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);*/
 }
-function setIcons(icon, iconsID) {
-  const skycons = new Skycons({ color: "white" });
-  const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+function setIcons(icon, iconID) {
+  let skycons = new Skycons({ color: "white" });
+  let currentIcon = icon.replaceAll(/" "/g, "_").toUpperCase();
   skycons.play();
-  return skycons.set(iconsID, Skycons[currentIcon]);
+  return skycons.set(iconID, Skycons[currentIcon]);
 }
 search("Stockholm");
