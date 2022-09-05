@@ -82,8 +82,6 @@ function showTemperature(response) {
   let weatherDescription = response.data.weather[0].description;
   let codnition = document.querySelector("#condition");
   codnition.innerHTML = `${weatherDescription}`;
-  let codnition = document.querySelector("#condition");
-  codnition.innerHTML = `${weatherDescription}`;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",

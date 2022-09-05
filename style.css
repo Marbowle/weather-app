@@ -5,6 +5,8 @@ body {
 }
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 h1,
 h3 {
@@ -68,7 +70,22 @@ h3 {
 }
 .weatherDetails {
   list-style: none;
+  display: felx;
+  position: fixed;
+  bottom: 5px;
+  display: felx;
+  flex-direction: column;
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin: 0 10px;
+  padding: 25px;
 }
+.weatherDetails li {
+  display: flex;
+  justify-content: space-between;
+}
+
 .panel {
   position: absolute;
   width: 40%;
