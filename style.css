@@ -162,12 +162,12 @@ h3 {
 .panel ul h4 {
   margin: 3em 0;
 }
-.cities li {
+.citiesSearch li {
   display: flex;
   cursor: pointer;
   justify-content: space-between;
 }
-.cities li:hover {
+.citiesSearch li:hover {
   color: #fff;
 }
 .weatherAfter li {

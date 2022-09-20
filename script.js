@@ -55,11 +55,12 @@ currentPosition.addEventListener("click", showPosition);
 
 function currentTemperature(event) {
   event.preventDefault();
-  let city = document.querySelector(".search").value;
-  search(city);
+  let cityInput = document.querySelector(".search").value;
+  search(cityInput);
 }
 let locationInput = document.querySelector("#locationInput");
 locationInput.addEventListener("submit", currentTemperature);
+
 function showTemperature(response) {
   let findName = response.data.name;
   let cityName = document.querySelector("#cityName");
