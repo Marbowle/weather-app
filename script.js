@@ -52,6 +52,29 @@ function forecastDate(timestamp) {
   ];
   return days[day];
 }
+function anotherCitiesRome() {
+  let apiKey = "85f30c950aad74b0daa3f0ac2c123393";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Rome&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+let weatherRome = document.querySelector(".cityRome");
+weatherRome.addEventListener("click", anotherCitiesRome);
+
+function anotherCitiesOslo() {
+  let apiKey = "85f30c950aad74b0daa3f0ac2c123393";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Oslo&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+let weatherOslo = document.querySelector(".cityOslo");
+weatherOslo.addEventListener("click", anotherCitiesOslo);
+
+function anotherCitiesLisbon() {
+  let apiKey = "85f30c950aad74b0daa3f0ac2c123393";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Lisbon&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+let weatherLisbon = document.querySelector(".cityLisbon");
+weatherLisbon.addEventListener("click", anotherCitiesLisbon);
 function search(city) {
   let apiKey = "85f30c950aad74b0daa3f0ac2c123393";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -141,7 +164,22 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", weatherDescription);
   getForecast(response.data.coord);
+  let date = response.data.dt * 1000;
+  let sunset = response.data.sys.sunset * 1000;
+  let timeOfDay = "Night";
+  let app = document.querySelector(".weather-app");
+  let btn = document.querySelector(".submit");
+  if (date > sunset) {
+    timeOfDay = "Night";
+    app.style.backgroundImage = `url(./Images/${timeOfDay}/${response.data.weather[0].main}.jpg)`;
+    btn.style.background = "e5ba92";
+    app.style.opacity = "1";
+  } else {
+    timeOfDay = "Day";
+    app.style.backgroundImage = `url(./Images/${timeOfDay}/${response.data.weather[0].main}.jpg)`;
+    btn.style.background = "181e27";
+    app.style.opacity = "1";
+  }
 }
-
-displayForecast();
 search("Stockholm");
+displayForecast();
