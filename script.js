@@ -52,13 +52,13 @@ function forecastDate(timestamp) {
   ];
   return days[day];
 }
-function anotherCitiesRome() {
+function anotherCitiesBerlin() {
   let apiKey = "85f30c950aad74b0daa3f0ac2c123393";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Rome&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Berlin&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
-let weatherRome = document.querySelector(".cityRome");
-weatherRome.addEventListener("click", anotherCitiesRome);
+let weatherBerlin = document.querySelector(".cityBerlin");
+weatherBerlin.addEventListener("click", anotherCitiesBerlin);
 
 function anotherCitiesOslo() {
   let apiKey = "85f30c950aad74b0daa3f0ac2c123393";
